@@ -17,7 +17,7 @@ Data masih berupa data contoh (mock) di sisi browser, disimpan di `localStorage`
 ## 2. Struktur Folder
 
 ```
-SiMagang-UNESA/
+PWUTS_A10_25091397033/
 ├── index.html               Pengalih otomatis ke dashboard.html
 ├── dashboard.html           Halaman Dashboard
 ├── form-laporan.html        Halaman Input / Edit Laporan Harian
