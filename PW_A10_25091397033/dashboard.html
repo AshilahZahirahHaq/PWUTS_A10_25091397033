@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - SiMagang UNESA</title>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS Eksternal -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- TOPBAR / HEADER -->
+    <header class="topbar">
+        <div class="topbar-inner">
+            <div class="brand">
+                <button id="mobile-menu-btn" class="menu-btn" aria-label="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <a href="dashboard.html" class="brand-link">
+                    <img src="assets/img/simagang-logo-putih.png" alt="Logo SiMagang" class="brand-logo">
+                </a>
+                <p class="brand-sub">Sistem Monitoring Praktik Kerja Lapang</p>
+            </div>
+
+            <div class="user-area">
+                <div class="user-info">
+                    <span class="user-name" id="user-display-name">Ashilah Zahirah Haq</span>
+                    <span class="user-role" id="user-display-role">Mahasiswa (NIM: 25091397033)</span>
+                </div>
+                <div class="avatar">AZ</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout">
+        <!-- SIDEBAR NAVIGATION -->
+        <aside id="sidebar" class="sidebar">
+            <div class="pkl-box">
+                <p class="pkl-label">Tempat PKL</p>
+                <p class="pkl-name">PT. Telkom Indonesia Tbk</p>
+                <p class="pkl-div">Divisi Software Development</p>
+            </div>
+
+            <nav class="nav">
+                <p class="nav-title">Menu Utama</p>
+                <a href="dashboard.html" class="nav-link active">
+                    <i class="fa-solid fa-chart-line"></i><span>Dashboard</span>
+                </a>
+                <a href="form-laporan.html" class="nav-link">
+                    <i class="fa-solid fa-pen-to-square"></i><span>Input Laporan Harian</span>
+                </a>
+                <a href="riwayat-laporan.html" class="nav-link">
+                    <i class="fa-solid fa-clock-rotate-left"></i><span>Riwayat &amp; Progres</span>
+                </a>
+
+                <div class="nav-section">
+                    <p class="nav-title">Informasi Bimbingan</p>
+                    <div class="nav-info">
+                        <p><strong>Pembimbing Lapangan:</strong><br> Bpk. Ahmad Subagja, M.T.</p>
+                        <p><strong>Dosen Pembimbing:</strong><br> Ari Kurniawan, S.Kom, M.T.</p>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <a href="#" id="btn-logout" class="nav-link nav-logout">
+                        <i class="fa-solid fa-right-from-bracket"></i><span>Keluar System</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- MAIN CONTENT AREA -->
+        <main class="main" id="main-content">
+            <div class="stack">
+                <!-- Welcome Banner -->
+                <div class="banner">
+                    <div class="banner-body">
+                        <h2>Selamat Datang, Ashilah!</h2>
+                        <p>Pantau dan catat seluruh aktivitas magang harian Anda secara terstruktur. Selalu periksa catatan perbaikan dari pembimbing lapangan Anda.</p>
+                        <div class="banner-actions">
+                            <a href="form-laporan.html" class="btn btn-gold"><i class="fa-solid fa-plus"></i> Isi Laporan Hari Ini</a>
+                            <a href="riwayat-laporan.html" class="btn btn-light"><i class="fa-solid fa-list-check"></i> Lihat Riwayat Progres</a>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-graduation-cap banner-icon"></i>
+                </div>
+
+                <!-- Kartu Statistik (F-02 SRS) -->
+                <div class="grid-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon c-blue"><i class="fa-solid fa-folder-open"></i></div>
+                        <div><p class="stat-label">Total Laporan</p><h3 class="stat-value" id="stat-total">0</h3></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon c-amber"><i class="fa-solid fa-hourglass"></i></div>
+                        <div><p class="stat-label">Menunggu Verifikasi</p><h3 class="stat-value t-amber" id="stat-menunggu">0</h3></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon c-green"><i class="fa-solid fa-circle-check"></i></div>
+                        <div><p class="stat-label">Disetujui Industri</p><h3 class="stat-value t-green" id="stat-disetujui">0</h3></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon c-indigo"><i class="fa-solid fa-award"></i></div>
+                        <div><p class="stat-label">Divalidasi Dosen</p><h3 class="stat-value t-indigo" id="stat-divalidasi">0</h3></div>
+                    </div>
+                </div>
+
+                <div class="grid-dash">
+                    <!-- Laporan Terakhir -->
+                    <div class="card">
+                        <div class="card-head">
+                            <h3 class="card-title"><i class="fa-solid fa-clock-rotate-left text-blue"></i> Laporan Terakhir</h3>
+                            <a href="riwayat-laporan.html" class="link-btn">Lihat Semua</a>
+                        </div>
+                        <div class="stack-xs" id="recent-reports"></div>
+                    </div>
+
+                    <!-- Status & Perhatian -->
+                    <div class="card">
+                        <h3 class="card-title" style="margin-bottom:16px"><i class="fa-solid fa-bell text-gold"></i> Status &amp; Perhatian</h3>
+                        <div id="rejected-alert"></div>
+                        <div class="alert-box alert-info">
+                            <p class="alert-title"><i class="fa-solid fa-circle-info"></i> Ketentuan Pengisian Laporan:</p>
+                            <ul>
+                                <li>Isi kegiatan harian dengan rinci dan jujur.</li>
+                                <li>Unggah lampiran bukti (PDF/JPG/PNG max 5MB).</li>
+                                <li>Laporan yang disetujui akan dikunci otomatis.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2026 SiMagang UNESA - Program Studi D4 Manajemen Informatika</p>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/helpers.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/pages/dashboard.js"></script>
+</body>
+</html>
